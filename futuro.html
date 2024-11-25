@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicciones de Vida</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0056b3;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+
+        }
+
+
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #predictionBox {
+            width: 100%;
+            height: 100px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 20px;
+            box-sizing: border-box;
+            /* Include padding in width calculation */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>¡Bienvenido al Generador de Predicciones de Vida!</h1>
+    <p>Haz clic en un botón a continuación para recibir un vistazo a tu futuro.</p>
+
+    <table>
+        <tr>
+            <td><button onclick="predecir('financiero')">Financiero</button></td>
+            <td><button onclick="predecir('amor')">Amor</button></td>
+            <td><button onclick="predecir('carrera')">Carrera</button></td>
+        </tr>
+    </table>
+
+    <textarea id="predictionBox" readonly></textarea>
+
+
+    <script>
+        function predecir(tema) {
+            let numeroAleatorio = Math.floor(Math.random() * 5);
+            let prediccion = "";
+
+            if (tema === 'financiero') {
+                switch (numeroAleatorio) {
+                    case 0: prediccion = "¡Pronto ganarás un pequeño premio de lotería!"; break;
+                    case 1: prediccion = "Te llegará un regalo financiero sorpresa."; break;
+                    case 2: prediccion = "Ten cuidado con las inversiones en el futuro cercano."; break;
+                    case 3: prediccion = "Tu arduo trabajo dará frutos financieros."; break;
+                    case 4: prediccion = "Puede surgir un gasto inesperado."; break;
+                }
+
+            } else if (tema === 'amor') {
+                switch (numeroAleatorio) {
+                    case 0: prediccion = "Un nuevo interés romántico entrará en tu vida."; break;
+                    case 1: prediccion = "Tu relación actual se profundizará."; break;
+                    case 2: prediccion = "Se necesita un período de reflexión sobre tu vida amorosa."; break;
+                    case 3: prediccion = "Espera una sorpresa romántica de un ser querido."; break;
+                    case 4: prediccion = "Concéntrate en la comunicación en tus relaciones."; break;
+                }
+
+
+            } else if (tema === 'carrera') {
+                switch (numeroAleatorio) {
+                    case 0: prediccion = "Un ascenso o una nueva oportunidad laboral está en el horizonte."; break;
+                    case 1: prediccion = "Tu trayectoria profesional dará un giro emocionante."; break;
+                    case 2: prediccion = "Un período de trabajo duro te llevará al éxito profesional."; break;
+                    case 3: prediccion = "Considera explorar nuevas habilidades para mejorar tu carrera."; break;
+                    case 4: prediccion = "Estate abierto a oportunidades de colaboración y networking."; break;
+                }
+            }
+
+            document.getElementById("predictionBox").value = prediccion;
+        }
+
+
+    </script>
+</body>
+
+</html>

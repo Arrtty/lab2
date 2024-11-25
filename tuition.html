@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script> alert("Welcome to the Tuition Calculator!");
+
+        let studentName = prompt("Ingresa tu nombre");
+        let academicYear = prompt("Ingresa tu año (1, 2, 3, o 4):").toLowerCase();
+        let numCredits = parseInt(prompt("Ingresa los creditos que vas a tomar:"));
+
+        let creditCost = 360;
+        let maxCreditCharge = 4320;
+        let tuition = 0;
+
+        if (numCredits > 12) {
+            tuition = maxCreditCharge;
+        } else {
+            tuition = numCredits * creditCost;
+        }
+
+        let studentFee = 0;
+
+        switch (academicYear) {
+            case "1":
+                studentFee = 50;
+                break;
+            case "2":
+                studentFee = 75;
+                break;
+            case "3":
+            case "4":
+                studentFee = 100;
+                break;
+            default:
+                alert("Año invalido. Recarga la pagina e ingresa uno valido");
+        }
+
+        let totalTuition = tuition + studentFee;
+
+        document.write("<p>Nombre: " + studentName + "</p>");
+        document.write("<p>Año: " + academicYear + "</p>");
+        document.write("<p>Creditos: " + numCredits + "</p>");
+        document.write("<p>Costo por creditos: $" + tuition + "</p>");
+        document.write("<p>Inscripcion: $" + studentFee + "</p>");
+        document.write("<p><b>Total: $" + totalTuition + "</b></p>");
+
+    </script>
+</body>
+
+</html>
